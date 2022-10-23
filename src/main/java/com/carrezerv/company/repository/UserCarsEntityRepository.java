@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserCarsEntityRepository extends JpaRepository<UserCarsEntity, Integer> {
+    UserCarsEntity findById(int id);
 }
