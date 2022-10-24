@@ -1,7 +1,6 @@
 package com.carrezerv.company.controller;
 
 import com.carrezerv.company.dto.UserEntityDto;
-import com.carrezerv.company.entity.UserEntity;
 import com.carrezerv.company.service.UserEntityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

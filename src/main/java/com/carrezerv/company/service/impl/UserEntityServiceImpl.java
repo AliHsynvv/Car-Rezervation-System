@@ -17,7 +17,6 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class UserEntityServiceImpl implements UserEntityService {
-
     private final UserEntityRepository userEntityRepository;
     private final ModelMapper modelMapper;
 
