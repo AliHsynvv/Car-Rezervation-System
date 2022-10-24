@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RezervedCarsEntityRepository extends JpaRepository<RezervedCarsEntity, Integer> {
+    RezervedCarsEntity findById(int id);
+    RezervedCarsEntity findByRezCarId(int id);
 }

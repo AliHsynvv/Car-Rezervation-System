@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/cars")
+@RequestMapping(value = "/rezer-cars")
 @RequiredArgsConstructor
 public class UserEntityController {
     private final UserEntityService userEntityService;

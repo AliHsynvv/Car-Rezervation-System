@@ -2,7 +2,9 @@ package com.carrezerv.company.controller;
 
 import com.carrezerv.company.controller.response.ErrorResponse;
 import com.carrezerv.company.enums.ErrorCodeEnum;
+import com.carrezerv.company.enums.RezervedCarsErrorCodeEnum;
 import com.carrezerv.company.exception.CustomNotFoundException;
+import com.carrezerv.company.exception.RezervedCarsException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -43,6 +45,14 @@ public class ExceptionHandlerController {
                 .build();
     }
 
+    @ExceptionHandler(RezervedCarsException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ErrorResponse handleUnknown(RezervedCarsException e) {
+        return ErrorResponse.builder()
+                .code(RezervedCarsErrorCodeEnum.ALREADY_EXIST.getCode())
+                .message(RezervedCarsErrorCodeEnum.ALREADY_EXIST.getMessage())
+                .build();
+    }
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ErrorResponse handleUnknown(Exception e) {
@@ -51,6 +61,5 @@ public class ExceptionHandlerController {
                 .message(ErrorCodeEnum.UNKNOWN_ERROR.getMessage())
                 .build();
     }
-
 
 }
